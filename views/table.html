@@ -32,6 +32,7 @@
     </div>
 
     <script>
+        const { BACKEND_ENDPOINT } = required('../config');
         const appdata = {
             data() {
                 return {
@@ -40,7 +41,7 @@
                 }
             },
             mounted() {
-                const backendEndpoint = 'http://localhost:8080/users';
+                const backendEndpoint = `${BACKEND_ENDPOINT}/users`;
 
                 axios.get(backendEndpoint)
                     .then(response => {
